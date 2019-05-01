@@ -1,0 +1,406 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Webshop Vũ Marin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+    <!-- bootstrap -->
+    <link href="/Content/css_bootstrap_js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Content/css_bootstrap_js/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/Content/css_bootstrap_js/themes/css/bootstrappage.css" rel="stylesheet">
+    <script src="/Scripts/jquery-3.3.1.min.js"></script>
+    <!-- global styles -->
+    <link href="/Content/css_bootstrap_js/themes/css/flexslider.css" rel="stylesheet">
+    <link href="/Content/css_bootstrap_js/themes/css/main.css" rel="stylesheet">
+
+    <!-- scripts -->
+    <script src="/Content/css_bootstrap_js/themes/js/jquery-1.7.2.min.js"></script>
+    <script src="/Content/css_bootstrap_js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Content/css_bootstrap_js/themes/js/superfish.js"></script>
+    <script src="/Content/css_bootstrap_js/themes/js/jquery.scrolltotop.js"></script>
+    <script src="/Content/css_bootstrap_js/themes/js/jquery.fancybox.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  
+
+    <script src="/Scripts/jquery.signalR-2.4.0.js"></script>
+    <script src="/signalr/hubs"></script>
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    
+    .span6{margin-left:0px;}
+    .modal.fade{top:-75%;}
+        .rep_a {border:0;outline:none;width:30px;padding:0;background:none;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="top-bar" class="container">
+        <div class="row">
+            <div class="span4">
+                <form method="POST" class="search_form">
+                    <input type="text" class="input-block-level search-query" placeholder="Search product ...">
+                </form>
+                <ul class="quick-result">
+                </ul>
+        
+            </div>
+            <div class="span8">
+                <div class="account pull-right">
+                    <ul class="user-menu">
+                        <li style="color:white;">.</li>
+                        <li><a id="cart_shop">
+                                 Giỏ Hàng
+                                 <font style="color:red;font-weight:bold;">
+                                     (</font></a><font style="color:red;font-weight:bold;"><a class="slsp" style="color:red;font-weight:bold">0</a>)
+                                 </font>
+                             
+
+                        </li>
+                        <li>
+<a href="/DangNhap/DangKy">Đăng Ký</a>
+                        </li>
+                        <li>
+<a data-toggle="modal" data-target="#myModal" href="/DangNhap">Đăng Nhập</a> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper" class="container">
+        <section class="navbar main-menu">
+            <div class="navbar-inner main-menu">
+                <a href="index.html" class="logo pull-left"></a>
+                <nav id="menu" class="pull-right">
+                    <ul id="test" class="sf-js-enabled sf-shadow">
+                        <li><a href="/">Trang Chủ</a></li>
+                        <li>
+                            <a href="./products.html" class="sf-with-ul">Sản Phẩm<span class="sf-sub-indicator"> »</span></a>
+                            <ul style="display: none; visibility: hidden;">
+                                <li><a href="./products.html">Lacinia nibh</a></li>
+                                <li><a href="./products.html">Eget molestie</a></li>
+                                <li><a href="./products.html">Varius purus</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a>Giới Thiệu</a>
+                        </li>
+                        <li><a>Liên Hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section><div class="_toggleMenu" style="display: none;"><a class="toggleMenu" href="#">- MENU -</a><ul class="nav">
+                        <li><a href="/">Trang Chủ</a></li>
+                        <li>
+                            <a href="./products.html" class="parent">Sản Phẩm</a>
+                            <ul>
+                                <li><a href="./products.html">Lacinia nibh</a></li>
+                                <li><a href="./products.html">Eget molestie</a></li>
+                                <li><a href="./products.html">Varius purus</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a>Giới Thiệu</a>
+                        </li>
+                        <li><a>Liên Hệ</a></li>
+                    </ul></div>
+        
+
+<section class="homepage-slider" id="home-slider">
+    <div class="flexslider">
+        <ul class="slides">
+            <li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; display: list-item;">
+                <img src="themes/images/carousel/banner-1.jpg" alt="">
+            </li>
+            <li style="width: 100%; float: left; margin-right: -100%; position: relative; display: none;" class="">
+                <img src="themes/images/carousel/banner-2.jpg" alt="">
+                <div class="intro">
+                    <h1>Mid season sale</h1>
+                    <p><span>Up to 50% Off</span></p>
+                    <p><span>On selected items online and in stores</span></p>
+                </div>
+            </li>
+        </ul>
+    <ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div>
+</section>
+<section class="header_text">
+    Chúng tôi dùng các mẫu với chất lượng hàng đầu trên Thế Giới , Các nhà phát triển chính hãng của chúng tôi luôn tối ưu hóa các mẫu thương mại
+    <br>Đừng bỏ lỡ để sử dụng các mẫu tốt nhất giá rẻ của chúng tôi bạn nhé !
+</section>
+<section class="main-content">
+    <div class="row">
+        <div class="span12">
+            <div class="row">
+                <div class="span12">
+                    <h4 class="title">
+                        <span class="pull-left"><span class="text"><span class="line">Sản Phẩm<strong> Nổi Bật</strong></span></span></span>
+                        <span class="pull-right">
+                            <a class="left button" href="#myCarousel-2" data-slide="prev"></a><a class="right button" href="#myCarousel-2" data-slide="next"></a>
+                        </span>
+                    </h4>
+                    <div id="myCarousel-2" class="myCarousel carousel slide">
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                
+<ul class="thumbnails">
+        <li class="span3">
+            <div class="product-box">
+                <span class="sale_tag"></span>
+                <p><a href="/SanPham/XemChiTiet?masanpham=16"><img style="margin-top:30px;" src="themes/images/cloth/99-0.jpg" alt=""></a></p>                
+                <a href="/SanPham/XemChiTiet?masanpham=16" class="category">Áo Trung Quốc</a>
+                <p class="price">200,000 $</p>
+            </div>
+        </li>
+        <li class="span3">
+            <div class="product-box">
+                <span class="sale_tag"></span>
+                <p><a href="/SanPham/XemChiTiet?masanpham=15"><img style="margin-top:30px;" src="themes/images/cloth/15.jpg" alt=""></a></p>                
+                <a href="/SanPham/XemChiTiet?masanpham=15" class="category">Áo Singapo</a>
+                <p class="price">19,000 $</p>
+            </div>
+        </li>
+        <li class="span3">
+            <div class="product-box">
+                <span class="sale_tag"></span>
+                <p><a href="/SanPham/XemChiTiet?masanpham=14"><img style="margin-top:30px;" src="themes/images/cloth/14.jpg" alt=""></a></p>                
+                <a href="/SanPham/XemChiTiet?masanpham=14" class="category">Áo Brazil</a>
+                <p class="price">18,000 $</p>
+            </div>
+        </li>
+        <li class="span3">
+            <div class="product-box">
+                <span class="sale_tag"></span>
+                <p><a href="/SanPham/XemChiTiet?masanpham=13"><img style="margin-top:30px;" src="themes/images/cloth/13.jpg" alt=""></a></p>                
+                <a href="/SanPham/XemChiTiet?masanpham=13" class="category">Áo Bồ Đào Nha</a>
+                <p class="price">20,000 $</p>
+            </div>
+        </li>
+</ul>
+
+                            </div>
+                            <div class="item">
+                                <ul class="thumbnails">
+        <li class="span3">
+            <div class="product-box">
+                <p><a href="/SanPham/XemChiTiet?masanpham=5"><img style="margin-top:30px;" src="themes/images/cloth/5.jpg" alt=""></a></p>                
+                <a href="/SanPham/XemChiTiet?masanpham=5" class="category">Áo Lào</a>
+                <p class="price">130,000</p>
+            </div>
+        </li>
+        <li class="span3">
+            <div class="product-box">
+                <p><a href="/SanPham/XemChiTiet?masanpham=6"><img style="margin-top:30px;" src="themes/images/cloth/6.jpg" alt=""></a></p>                
+                <a href="/SanPham/XemChiTiet?masanpham=6" class="category">Áo Anh</a>
+                <p class="price">30,000</p>
+            </div>
+        </li>
+        <li class="span3">
+            <div class="product-box">
+                <p><a href="/SanPham/XemChiTiet?masanpham=7"><img style="margin-top:30px;" src="themes/images/cloth/7.jpg" alt=""></a></p>                
+                <a href="/SanPham/XemChiTiet?masanpham=7" class="category">Áo Mỹ</a>
+                <p class="price">20,000</p>
+            </div>
+        </li>
+        <li class="span3">
+            <div class="product-box">
+                <p><a href="/SanPham/XemChiTiet?masanpham=8"><img style="margin-top:30px;" src="themes/images/cloth/8.jpg" alt=""></a></p>                
+                <a href="/SanPham/XemChiTiet?masanpham=8" class="category">Áo Pháp</a>
+                <p class="price">10,000</p>
+            </div>
+        </li>
+</ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <h4 class="title">
+                        <span class="pull-left"><span class="text"><span class="line">Tẩt Cả <strong>Sản Phẩm</strong></span></span></span>
+                        <span class="pull-right">
+                            
+                        </span>
+                    </h4>
+                    <div id="myCarousel-2" class="myCarousel carousel slide">
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                
+<ul class="thumbnails" id="ptrang">
+        <li class="span3">
+            <div class="product-box">
+                <span class="sale_tag"></span>
+                <p><a href="/SanPham/XemChiTiet?masanpham=1"><img style="margin-top:30px;" src="themes/images/cloth/1.jpg" alt=""></a></p>
+
+                <a href="products.html" class="category">Áo Hàn Quốc</a>
+                <p class="price">40,000 $</p>
+            </div>
+        </li>
+        <li class="span3">
+            <div class="product-box">
+                <span class="sale_tag"></span>
+                <p><a href="/SanPham/XemChiTiet?masanpham=2"><img style="margin-top:30px;" src="themes/images/cloth/2.jpg" alt=""></a></p>
+
+                <a href="products.html" class="category">Áo Nhật Bản</a>
+                <p class="price">70,000 $</p>
+            </div>
+        </li>
+        <li class="span3">
+            <div class="product-box">
+                <span class="sale_tag"></span>
+                <p><a href="/SanPham/XemChiTiet?masanpham=3"><img style="margin-top:30px;" src="themes/images/cloth/3.jpg" alt=""></a></p>
+
+                <a href="products.html" class="category">Áo Việt Nam</a>
+                <p class="price">90,000 $</p>
+            </div>
+        </li>
+        <li class="span3">
+            <div class="product-box">
+                <span class="sale_tag"></span>
+                <p><a href="/SanPham/XemChiTiet?masanpham=4"><img style="margin-top:30px;" src="themes/images/cloth/4.jpg" alt=""></a></p>
+
+                <a href="products.html" class="category">Áo Thái lan</a>
+                <p class="price">10,000 $</p>
+            </div>
+        </li>
+</ul>
+<div style="clear:both;"></div>
+<div class="phantrang">
+            <button class="page link" data-pageid="1">1</button>
+        <button class="page link" data-pageid="2">2</button>
+        <button class="page link" data-pageid="3">3</button>
+        <button class="page link" data-pageid="4">4</button>
+
+<script src="/Scripts/javascript_shop/phantrang.js"></script>
+
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row feature_box">
+                <div class="span4">
+                    <div class="service">
+                        <div class="responsive">
+                            <img src="themes/images/feature_img_2.png" alt="">
+                            <h4>NHÀ THIẾT KẾ <strong>HIỆN ĐẠI</strong></h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and printing industry unknown printer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="service">
+                        <div class="customize">
+                            <img src="themes/images/feature_img_1.png" alt="">
+                            <h4>MIỄN PHÍ <strong>SHIPPING</strong></h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and printing industry unknown printer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="service">
+                        <div class="support">
+                            <img src="themes/images/feature_img_3.png" alt="">
+                            <h4>HỖ TRỢ TRỰC TIẾP <strong>24/7</strong></h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and printing industry unknown printer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ 
+        
+        <section id="footer-bar">
+            <div class="row">
+                <div class="span3">
+                    <h4>Navigation</h4>
+                    <ul class="nav">
+                        <li><a href="./index.html">Homepage</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./contact.html">Contac Us</a></li>
+                        <li><a href="./cart.html">Your Cart</a></li>
+                        <li><a href="./register.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="span4">
+                    <h4>My Account</h4>
+                    <ul class="nav">
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li><a href="#">Wish List</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div class="span5">
+                    <p class="logo"></p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. the  Lorem Ipsum has been the industry's standard dummy text ever since the you.</p>
+                    <br>
+                    <span class="social_icons">
+                        <a class="facebook" href="#">Facebook</a>
+                        <a class="twitter" href="#">Twitter</a>
+                        <a class="skype" href="#">Skype</a>
+                        <a class="vimeo" href="#">Vimeo</a>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <section id="copyright">
+            <span> Thiết Kế Bởi : Sinh Viên ITC CÔNG NGHỆ THÔNG TIN TP.HCM</span>
+        </section>
+    </div>
+    <script src="/Content/css_bootstrap_js/themes/js/common.js"></script>
+    <script src="/Content/css_bootstrap_js/themes/js/jquery.flexslider-min.js"></script>
+    <script src="/Scripts/currency.min.js"></script>
+    <script src="/Scripts/javascript_shop/search.js"></script>
+
+    
+    <script type="text/javascript">
+			$(function() {
+				$(document).ready(function() {
+					$('.flexslider').flexslider({
+						animation: "fade",
+						slideshowSpeed: 4000,
+						animationSpeed: 600,
+						controlNav: false,
+						directionNav: true,
+						controlsContainer: ".flex-container" // the container that holds the flexslider
+					});
+				});
+			});
+    </script>
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!--nội dung load modal-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="/Scripts/javascript_shop/Realtime_signalR.js"></script>
+
+
+<noembed><!--SCRIPT GENERATED BY SERVER! PLEASE REMOVE-->
+<center><a href="http://somee.com">Web hosting by Somee.com</a></center>
+</textarea></xml></script></noframes></noscript></object></layer></style></title></applet>
+<script language="JavaScript" src="http://ads.mgmt.somee.com/serveimages/ad2/WholeInsert4.js"></script>
+<!--SCRIPT GENERATED BY SERVER! PLEASE REMOVE--></noembed><div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 12px; right: 0px; opacity: 0; cursor: pointer;"><img src="themes/images/gotop.png" style="width:40px; height:40px; margin-top: 25px; margin-right: 17px;"></div></body></html>
